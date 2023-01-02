@@ -1,0 +1,39 @@
+#ifndef STUDENT_HPP
+#define STUDENT_HPP
+
+#include "../person.hpp"
+
+class Student : public Person{
+    string course;
+    string matriculation;
+public:
+    // * constructor
+    Student();
+    Student(string, string, string, string, string);
+
+    // * getters and setters
+    string getCourse();
+    void setCourse(string);
+
+    string getMatriculation();
+    void setMatriculation(string);
+
+    // * student functions
+    // creates new student
+    Student creates();
+
+    // * searches a student 
+    Student searches(Student*);
+
+    // * updates a student
+    Student updates(Student);
+
+    // * deletes a student
+    Student deletes(Student*);
+
+    // * operator overloading
+    friend ostream& operator<<(ostream&, Student&);
+    
+};
+
+#endif /* STUDENT_HPP */
