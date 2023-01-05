@@ -21,6 +21,7 @@ void Menu::showMenu(){
     cout << " 3. Gerenciar Curso" <<endl;
     cout << " 4. Cadastrar Sala" <<endl;
     cout << " 5. Gerar Relatorio" <<endl; // TODO: search for some extension to print ´
+    getAnswer();
 }
 
 void Menu::getAnswer(){

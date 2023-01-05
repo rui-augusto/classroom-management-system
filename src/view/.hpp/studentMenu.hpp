@@ -7,8 +7,10 @@
 class StudentMenu : public Menu{
     Student student;
 public:
+
     void showMenu();
     void getAnswer();
+
 };
 
 #endif /* STUDENTMENU_HPP */

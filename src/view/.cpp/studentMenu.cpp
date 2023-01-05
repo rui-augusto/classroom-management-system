@@ -14,7 +14,7 @@ void StudentMenu::getAnswer(){
     // setOption(op);
     // * student info
     Student student;
-    while (op < 0 || op > 5){
+    while (op != 5){
         cin >> op;
         switch (op){
             case 1: // * register new student
@@ -29,8 +29,11 @@ void StudentMenu::getAnswer(){
             case 4: // * updates a student
                 student = student.updates(student);
                 break;
+            case 5:
+                return;
             default: 
                 cout << "informe uma opcao valida." <<endl;   
         }
+        showMenu();
     }
 }

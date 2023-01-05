@@ -1,24 +1,25 @@
 #include "main.hpp"
-#include "model/Student/student.hpp"
 
 int main(){
 
-    // Menu menu;
-    // menu.showMenu();
-    // menu.getAnswer();
+    while(true){
+        Menu menu;
+        menu.showMenu();
+    }
+    
+    // Student student;
 
-    Student student;
+    // student = student.creates();
 
-    student = student.creates();
+    // cout << student;
 
-    cout << student;
+    // student = student.deletes(&student);
 
-    student = student.deletes(&student);
+    // cout << student;
 
-    cout << student;
-
-    // descobrir um jeito de deletar
-    // reorganizar e reestruturar como vai funcionar
+    // TODO: descobrir um jeito de deletar
+    // * USE delete FOR DELETING
+    // TODO: reorganizar e reestruturar como vai funcionar
     // ( chama-se menu, depois entra em um sub menu e assim volta para o menu)
     // ( até que a opção informada seja sair do menu e, assim, encerrar o programa)
 
