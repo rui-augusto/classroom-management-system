@@ -55,9 +55,22 @@ Student Student::creates(){
 }
 
 // TODO: searches function
-Student Student::searches(Student* students){
-    return students[0];
+void Student::show(vector<Student> students){
+    int i = 1; // * Student "ID"
+
+    cout << "Total de alunos: " << students.size() <<endl;
+
+    // * show every student of the Students vector
+    for(auto it = begin(students); it != students.end(); it++, i++){
+        cout <<endl <<endl;
+        cout << "Dados do aluno " << i << ":" <<endl;
+        cout << *it;
+    }
+
+    cout << "Pressione uma tecla para voltar ao menu.";
+    getchar(); getchar();
 }
+
 
 Student Student::updates(Student student){
     int op;
@@ -108,7 +121,7 @@ Student Student::deletes(Student* student){
 
 ostream& operator<<(ostream& out, Student& student){
 
-    out << "Name: " << student.getName() <<endl;
+    out << "Nome: " << student.getName() <<endl;
     out << "Telefone: " << student.getTelephone() <<endl;
     out << "CPF: " << student.getCpf() <<endl;
     out << "Curso: " << student.course <<endl;

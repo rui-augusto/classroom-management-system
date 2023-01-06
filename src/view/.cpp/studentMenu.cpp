@@ -13,20 +13,26 @@ void StudentMenu::getAnswer(){
     int op = -1;
     // setOption(op);
     // * student info
+    vector<Student> students;
     Student student;
     while (op != 5){
         cin >> op;
         switch (op){
             case 1: // * register new student
                 student = student.creates(); // TODO: remember to push this into some data
+                students.push_back(student);
                 break;
             case 2: // * searches for a student
-                // ! student.searches();
+                student.show(students);
                 break;
             case 3: // * deletes a student
                 student = student.deletes(&student);
+                // TODO: the same of 'updates' method
+                cout << student;
                 break;
             case 4: // * updates a student
+                // TODO: CREATES A 'getStudentIndex' method to
+                // TODO: get the index and then updates in the index
                 student = student.updates(student);
                 break;
             case 5:

@@ -1,4 +1,5 @@
 #include "main.hpp"
+#include <vector>
 
 int main(){
 
@@ -6,16 +7,6 @@ int main(){
         Menu menu;
         menu.showMenu();
     }
-    
-    // Student student;
-
-    // student = student.creates();
-
-    // cout << student;
-
-    // student = student.deletes(&student);
-
-    // cout << student;
 
     // TODO: descobrir um jeito de deletar
     // * USE delete FOR DELETING

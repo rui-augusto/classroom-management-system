@@ -23,7 +23,7 @@ public:
     Student creates();
 
     // * searches a student 
-    Student searches(Student*);
+    void show(vector<Student>);
 
     // * updates a student
     Student updates(Student);
