@@ -27,12 +27,9 @@ void StudentMenu::getAnswer(){
                 break;
             case 3: // * deletes a student
                 student = student.deletes(&student);
-                // TODO: the same of 'updates' method
                 cout << student;
                 break;
             case 4: // * updates a student
-                // TODO: CREATES A 'getStudentIndex' method to
-                // TODO: get the index and then updates in the index
                 student = student.updates(student);
                 break;
             case 5:
