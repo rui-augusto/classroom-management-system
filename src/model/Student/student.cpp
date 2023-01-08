@@ -105,7 +105,7 @@ Student Student::updates(Student student){
             student.setCourse(updt);
             break;
         case 5:
-            cout << "Informe a nova matrícula: " <<endl;
+            cout << "Informe a nova matricula: " <<endl;
             cin >> updt;
             student.setMatriculation(updt);
     }
@@ -119,15 +119,22 @@ Student Student::deletes(Student* student){
     return *student;
 }
 
-int Student::findIndex(vector<Student> student, string matriculation){
-    // receiving the matriculation to compare
-    int i = 0;
-    for(auto it = begin(student); it != end(student); it++, i++){
-        if((*it).getMatriculation() == matriculation){
-            return i;
+int Student::findIndex(vector<Student> student){
+    int i; // * index counter
+    string matriculation;
+
+    while(true){ // * only stops when the student is founded
+        i = 0;
+        cout << "Informe a matricula do aluno em questao: ";
+        cin >> matriculation;
+        
+        for(auto it = begin(student); it != end(student); it++, i++){
+            if((*it).getMatriculation() == matriculation){
+                return i;
+            }
         }
     }
-    return -1;
+
 }
 
 ostream& operator<<(ostream& out, Student& student){

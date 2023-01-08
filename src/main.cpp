@@ -8,7 +8,10 @@ int main(){
         menu.showMenu();
     }
 
-    // TODO: GET THE INDEX AND THEN UPDATES IN THE INDEX
+    // TODO: add a new option in 'updates' function
+    // * 'updates all info' 
+
+
     // * use it on 'deletes' and 'updates' functions
 
     // TODO: descobrir um jeito de deletar

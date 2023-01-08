@@ -32,7 +32,7 @@ public:
     Student deletes(Student*);
 
     // * find student by matriculation (returns index)
-    int findIndex(vector<Student>, string);
+    int findIndex(vector<Student>);
     
     // * operator overloading
     friend ostream& operator<<(ostream&, Student&);

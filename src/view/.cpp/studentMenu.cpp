@@ -10,7 +10,7 @@ void StudentMenu::showMenu(){
 }
 
 void StudentMenu::getAnswer(){
-    int op = -1;
+    int op = -1, index;
     // setOption(op);
     // * student info
     vector<Student> students;
@@ -23,6 +23,7 @@ void StudentMenu::getAnswer(){
                 students.push_back(student);
                 break;
             case 2: // * searches for a student
+                // ? show all students or show only one by index?
                 student.show(students);
                 break;
             case 3: // * deletes a student
@@ -30,7 +31,10 @@ void StudentMenu::getAnswer(){
                 cout << student;
                 break;
             case 4: // * updates a student
-                student = student.updates(student);
+                index = student.findIndex(students);
+                cout << "Index do aluno" << index << endl;
+                students[index] = student.updates(students[index]);
+                // student = student.updates(student);
                 break;
             case 5:
                 return;
