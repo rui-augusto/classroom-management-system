@@ -119,6 +119,17 @@ Student Student::deletes(Student* student){
     return *student;
 }
 
+int Student::findIndex(vector<Student> student, string matriculation){
+    // receiving the matriculation to compare
+    int i = 0;
+    for(auto it = begin(student); it != end(student); it++, i++){
+        if((*it).getMatriculation() == matriculation){
+            return i;
+        }
+    }
+    return -1;
+}
+
 ostream& operator<<(ostream& out, Student& student){
 
     out << "Nome: " << student.getName() <<endl;

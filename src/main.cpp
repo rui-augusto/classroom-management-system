@@ -8,7 +8,6 @@ int main(){
         menu.showMenu();
     }
 
-    // TODO: CREATES A 'getStudentIndex' METHOD TO
     // TODO: GET THE INDEX AND THEN UPDATES IN THE INDEX
     // * use it on 'deletes' and 'updates' functions
 
