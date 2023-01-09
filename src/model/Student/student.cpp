@@ -54,7 +54,7 @@ Student Student::creates(){
     return Student(name, telephone, cpf, course, matriculation);
 }
 
-// TODO: searches function
+// TODO: new option to show only one student
 void Student::show(vector<Student> students){
     int i = 1; // * Student "ID"
 

@@ -8,6 +8,9 @@ int main(){
         menu.showMenu();
     }
 
+    // TODO: change 'course' in 'Student' class
+    // * string to class
+
     // TODO: 
     // ? add a new option in 'updates' function
     // * 'updates all info' in updates function

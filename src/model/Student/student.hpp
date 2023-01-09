@@ -19,7 +19,7 @@ public:
     void setMatriculation(string);
 
     // * student functions
-    // creates new student
+    // * creates new student
     Student creates();
 
     // * searches a student 
