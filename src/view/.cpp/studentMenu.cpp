@@ -19,16 +19,17 @@ void StudentMenu::getAnswer(){
         cin >> op;
         switch (op){
             case 1: // * register new student
-                student = student.creates(); // TODO: remember to push this into some data
+                student = student.creates();
                 students.push_back(student);
                 break;
             case 2: // * searches for a student
-                // ? show all students or show only one by index?
                 student.show(students);
                 break;
             case 3: // * deletes a student
-                student = student.deletes(&student);
-                cout << student;
+                index = student.findIndex(students);
+                student.deletes(students, index);
+                // student = student.deletes(&student);
+                // cout << student;
                 break;
             case 4: // * updates a student
                 index = student.findIndex(students);

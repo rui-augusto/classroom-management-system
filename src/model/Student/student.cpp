@@ -71,7 +71,7 @@ void Student::show(vector<Student> students){
     getchar(); getchar();
 }
 
-
+// * updates function
 Student Student::updates(Student student){
     int op;
     string updt;
@@ -112,11 +112,11 @@ Student Student::updates(Student student){
     return student;
 }
 
-//TODO: deletes function
-Student Student::deletes(Student* student){
-    delete student;
-
-    return *student;
+// * deletes function
+void Student::deletes(vector<Student>& students, int index){
+    auto it = students.begin();
+    advance(it, index);
+    students.erase(it);
 }
 
 int Student::findIndex(vector<Student> student){

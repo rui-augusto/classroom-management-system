@@ -29,7 +29,7 @@ public:
     Student updates(Student);
 
     // * deletes a student
-    Student deletes(Student*);
+    void deletes(vector<Student>&, int);
 
     // * find student by matriculation (returns index)
     int findIndex(vector<Student>);
