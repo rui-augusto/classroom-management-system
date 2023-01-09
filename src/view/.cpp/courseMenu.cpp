@@ -1,4 +1,4 @@
-#include "courseMenu.hpp"
+#include "../.hpp/courseMenu.hpp"
 
 void CourseMenu::showMenu(){
     system("clear||cls"); // clear the screen
@@ -36,4 +36,5 @@ void CourseMenu::getAnswer(){
                 cout << "informe uma opcao valida." <<endl;   
         }
         showMenu();
+    }
 }

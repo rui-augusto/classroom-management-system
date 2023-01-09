@@ -5,10 +5,12 @@
 #include "../../model/Course/course.hpp"
 
 class CourseMenu : public Menu{
-
+    Course course;
 public:
+
     void showMenu();
     void getAnswer();
+    
 };
 
 #endif /* COURSEMENU */

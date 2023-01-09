@@ -1,4 +1,7 @@
 #include "../.hpp/menu.hpp"
+#include "../.hpp/studentMenu.hpp"
+#include "../.hpp/courseMenu.hpp"
+
 
 Menu::Menu() {
     setOption(0);
