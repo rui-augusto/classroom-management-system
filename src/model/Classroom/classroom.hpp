@@ -1,18 +1,28 @@
 #ifndef CLASSROOM_HPP
 #define CLASSROOM_HPP
 
-#include <string>
 #include "../Student/student.hpp"
+#include <string>
+#include <vector>
 
 class Classroom{
-    Student* students;
+    vector<Student> students;
     int capacity;
-    string firstDay;
-    string secondDay;
 public:
     // * constructor
+    Classroom(); // TODO: remember to implement (used in Course.cpp)
+    Classroom(vector<Student>, int);
 
     // * getters and setters
+    vector<Student> getStudents();
+    void setStudents(Student); // * only push one student at time
+
+    int getCapacity();
+    void setCapacity(int);
+
+    // * Classroom functions
+
+
 };
 
 #endif /* CLASSROOM_HPP */

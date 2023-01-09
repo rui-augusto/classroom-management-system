@@ -6,6 +6,9 @@
 #include <iostream>
 #include <vector>
 
+#include "studentMenu.hpp"
+#include "courseMenu.hpp"
+
 using namespace std;
 
 class Menu{
