@@ -36,6 +36,20 @@ void Course::setSecondDay(Classroom secondDay){
     this->secondDay = secondDay;
 }
 
+Course Course::creates(){
+    int code;
+    Classroom firstDay, secondDay;
+
+    cout << "Informe o codigo do curso: ";
+    cin >> code;
+
+    firstDay = firstDay.creates();
+    secondDay = secondDay.creates();
+
+    return Course(code, firstDay, secondDay);
+
+}
+
 void Course::show(vector<Course> courses){
     int i = 1; // * Course "ID"
 
@@ -54,6 +68,9 @@ void Course::show(vector<Course> courses){
 }
 
 ostream& operator<<(ostream& out, Course& course){
-    out << "Sobrecarga de operador";
+    out << "Codigo: " << course.getCode() <<endl;
+    // ! error while using << operator in Classroom
+    // out <<course.getFirstDay();
+
     return out;
 }

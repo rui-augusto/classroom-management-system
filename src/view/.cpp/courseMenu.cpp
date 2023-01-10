@@ -19,10 +19,11 @@ void CourseMenu::getAnswer(){
         cin >> op;
         switch (op){
             case 1: // * register new course
-                cout << "register new course" << endl;
+                course = course.creates();
+                courses.push_back(course);
                 break;
             case 2: // * searches for a course
-                cout << "searches for a course" << endl;
+                course.show(courses);
                 break;
             case 3: // * deletes a course
                 cout << "deletes a course" << endl;

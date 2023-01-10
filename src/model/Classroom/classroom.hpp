@@ -11,7 +11,7 @@ class Classroom{
 public:
     // * constructor
     Classroom(); // TODO: remember to implement (used in Course.cpp)
-    Classroom(vector<Student>, int);
+    Classroom(int); // ? vector<Student> should be a parameter ?
 
     // * getters and setters
     vector<Student> getStudents();
@@ -21,8 +21,12 @@ public:
     void setCapacity(int);
 
     // * Classroom functions
+    // * creates a classroom
+    Classroom creates();
 
 
+    // * operator overloading
+    friend ostream& operator<<(ostream&, Classroom&);
 };
 
 #endif /* CLASSROOM_HPP */
