@@ -2,6 +2,7 @@
 #define COURSE_HPP
 
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -29,7 +30,17 @@ public:
 
     // * Course functions
 
+    // * creates new course
+    Course creates();
+
+    // * searches a course
     void show(vector<Course>);
+
+    // * updates a course
+    Course updates(Course);
+
+    // * deletes a course
+    void deletes(vector<Course>&, int);
 
     // * operator overloading
     friend ostream& operator<<(ostream&, Course&);

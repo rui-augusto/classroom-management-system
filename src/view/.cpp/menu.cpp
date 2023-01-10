@@ -32,19 +32,22 @@ void Menu::getAnswer(){
     setOption(op);
 
     StudentMenu studentMenu;
+    CourseMenu courseMenu;
     
     switch (this->option){
-        case 1:
+        case 1: // * students menu
             studentMenu.showMenu();
             studentMenu.getAnswer();
             break;
-        case 2:
+        case 2: // * teachers menu
             break;
-        case 3:
+        case 3: // * courses menu
+            courseMenu.showMenu();
+            courseMenu.getAnswer();
             break;
-        case 4:
+        case 4: // * classrooms menu
             break;
-        case 5:
+        case 5: // * generate report
             break;   
     }
 }
