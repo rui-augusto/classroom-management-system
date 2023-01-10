@@ -71,8 +71,10 @@ void Course::show(vector<Course> courses){
 
 ostream& operator<<(ostream& out, Course& course){
     out << "Codigo: " << course.getCode() <<endl;
-    // ! error while using << operator in Classroom
-    // out << course.getFirstDay();
+    out << "Dados da sala do primeiro dia de aula: " <<endl;
+    out << course.firstDay;
+    out << "Dados da sala do segundo dia de aula: " <<endl;
+    out << course.secondDay;
 
     return out;
 }
