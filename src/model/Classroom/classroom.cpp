@@ -9,6 +9,22 @@ Classroom::Classroom(int capacity){
     this->capacity = capacity;
 }
 
+vector<Student> Classroom::getStudents(){
+    return this->students;
+}
+
+void Classroom::setStudents(Student student){
+    this->students.push_back(student);
+}
+
+int Classroom::getCapacity(){
+    return this->capacity;
+}
+
+void Classroom::setCapacity(int capacity){
+    this->capacity = capacity;
+}
+
 Classroom Classroom::creates(){
     int capacity;
 

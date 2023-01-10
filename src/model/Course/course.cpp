@@ -43,11 +43,13 @@ Course Course::creates(){
     cout << "Informe o codigo do curso: ";
     cin >> code;
 
+    cout << "Alocacao do primeiro dia de aula." <<endl;
     firstDay = firstDay.creates();
+
+    cout << "Alocacao do segundo dia de aula." <<endl;
     secondDay = secondDay.creates();
 
     return Course(code, firstDay, secondDay);
-
 }
 
 void Course::show(vector<Course> courses){
@@ -70,7 +72,7 @@ void Course::show(vector<Course> courses){
 ostream& operator<<(ostream& out, Course& course){
     out << "Codigo: " << course.getCode() <<endl;
     // ! error while using << operator in Classroom
-    // out <<course.getFirstDay();
+    // out << course.getFirstDay();
 
     return out;
 }
