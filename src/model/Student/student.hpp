@@ -2,6 +2,7 @@
 #define STUDENT_HPP
 
 #include "../person.hpp"
+// ! #include "../Course/course.hpp"
 
 class Student : public Person{
     string course;
