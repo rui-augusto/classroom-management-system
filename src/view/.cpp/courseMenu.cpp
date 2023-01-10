@@ -14,6 +14,7 @@ void CourseMenu::getAnswer(){
 
     vector<Course> courses;
     Course course;
+    // Course course();
 
     while (op != 5){
         cin >> op;

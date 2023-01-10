@@ -1,6 +1,10 @@
 #ifndef COURSE_HPP
 #define COURSE_HPP
 
+#include <iostream>
+
+using namespace std;
+
 #include "../Classroom/classroom.hpp"
 // #include "../Teacher/teacher.hpp"
 

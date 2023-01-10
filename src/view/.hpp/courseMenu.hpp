@@ -13,4 +13,4 @@ public:
     
 };
 
-#endif /* COURSEMENU */
+#endif /* COURSEMENU_HPP */

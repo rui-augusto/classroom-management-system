@@ -8,6 +8,9 @@ int main(){
         menu.showMenu();
     }
 
+    // TODO: try to use 'Course' class in main.cpp
+    // * remember to write the operator overloading before that
+
     // TODO: change 'course' in 'Student' class
     // * string to class
 

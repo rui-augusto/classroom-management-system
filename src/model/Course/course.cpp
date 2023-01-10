@@ -52,3 +52,8 @@ void Course::show(vector<Course> courses){
     getchar(); getchar();
 
 }
+
+ostream& operator<<(ostream& out, Course& course){
+    out << "Sobrecarga de operador";
+    return out;
+}
