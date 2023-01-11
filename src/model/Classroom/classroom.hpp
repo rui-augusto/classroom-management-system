@@ -6,7 +6,7 @@
 #include <vector>
 
 class Classroom{
-    vector<Student> students;
+    bool available; // * should be an array of 5 (weekdays) positions
     int capacity;
 public:
     // * constructor
@@ -14,8 +14,11 @@ public:
     Classroom(int); // ? vector<Student> should be a parameter ?
 
     // * getters and setters
-    vector<Student> getStudents();
-    void setStudents(Student); // * only push one student at time
+    // vector<Student> getStudents();
+    // void setStudents(Student); // * only push one student at time
+
+    bool getAvailable();
+    void setAvailable(bool);
 
     int getCapacity();
     void setCapacity(int);

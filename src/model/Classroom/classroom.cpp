@@ -9,12 +9,20 @@ Classroom::Classroom(int capacity){
     this->capacity = capacity;
 }
 
-vector<Student> Classroom::getStudents(){
-    return this->students;
+// vector<Student> Classroom::getStudents(){
+//     return this->students;
+// }
+
+// void Classroom::setStudents(Student student){
+//     this->students.push_back(student);
+// }
+
+bool Classroom::getAvailable(){
+    return this->available;
 }
 
-void Classroom::setStudents(Student student){
-    this->students.push_back(student);
+void Classroom::setAvailable(bool available){
+    this->available = available;
 }
 
 int Classroom::getCapacity(){
@@ -35,7 +43,7 @@ Classroom Classroom::creates(){
 }
 
 ostream& operator<<(ostream& out, Classroom& classroom){
-    out << "Quantidade de alunos: " << classroom.getStudents().size() <<endl;
+    // out << "Quantidade de alunos: " << classroom.getStudents().size() <<endl;
     out << "Capacidade da sala: " << classroom.getCapacity() <<endl;
 
     return out;
