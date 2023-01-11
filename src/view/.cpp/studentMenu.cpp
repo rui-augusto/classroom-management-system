@@ -33,7 +33,6 @@ void StudentMenu::getAnswer(){
                 break;
             case 4: // * updates a student
                 index = student.findIndex(students);
-                cout << "Index do aluno" << index << endl;
                 students[index] = student.updates(students[index]);
                 // student = student.updates(student);
                 break;

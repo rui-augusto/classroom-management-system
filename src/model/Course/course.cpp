@@ -80,6 +80,30 @@ Course Course::updates(Course course){ // * only updates the code
     return course;
 }
 
+void Course::deletes(vector<Course>& courses, int index){
+    auto it = courses.begin();
+    advance(it, index);
+    courses.erase(it);
+}
+
+int Course::findIndex(vector<Course> courses){
+    int code, index;
+
+    while(true){
+        index = 0;
+
+        cout << "Informe o codigo do curso: ";
+        cin >> code;
+
+        for(auto it = begin(courses); it != end(courses); it++, index++){
+            if ((*it).code == code){
+                return index;
+            }
+        }
+        cout << "Codigo informado nao pertence a nenhum curso." <<endl;
+    }
+}
+
 ostream& operator<<(ostream& out, Course& course){
     out << "Codigo: " << course.getCode() <<endl;
     out << "Dados da sala do primeiro dia de aula: " <<endl;

@@ -12,12 +12,6 @@ int main(){
     // * available should be an array of 5 positions,
     // * that represents the weekdays 
 
-    // TODO: try to use 'Course' class in main.cpp
-    // * remember to write the operator overloading before that
-
-    // TODO: change 'course' in 'Student' class
-    // * string to class
-
     // TODO: 
     // ? add a new option in 'updates' function
     // * 'updates all info' in updates function

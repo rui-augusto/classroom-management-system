@@ -11,7 +11,7 @@ void CourseMenu::showMenu(){
 
 void CourseMenu::getAnswer(){
     int op = -1;
-
+    int index;
     vector<Course> courses;
     Course course;
 
@@ -26,10 +26,12 @@ void CourseMenu::getAnswer(){
                 course.show(courses);
                 break;
             case 3: // * deletes a course
-                cout << "deletes a course" << endl;
+                index = course.findIndex(courses);
+                course.deletes(courses, index);
                 break;
             case 4: // * updates a course
-                cout << "updates a course" << endl;
+                index = course.findIndex(courses);
+                courses[index] = course.updates(courses[index]);
                 break;
             case 5:
                 return;
