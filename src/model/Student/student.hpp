@@ -2,19 +2,19 @@
 #define STUDENT_HPP
 
 #include "../person.hpp"
-// ! #include "../Course/course.hpp"
+#include "../Course/course.hpp"
 
 class Student : public Person{
-    string course;
+    Course course;
     string matriculation;
 public:
     // * constructor
     Student();
-    Student(string, string, string, string, string);
+    Student(string, string, string, Course, string);
 
     // * getters and setters
-    string getCourse();
-    void setCourse(string);
+    Course getCourse();
+    void setCourse(Course);
 
     string getMatriculation();
     void setMatriculation(string);

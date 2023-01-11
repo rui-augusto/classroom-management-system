@@ -1,9 +1,11 @@
 #ifndef CLASSROOM_HPP
 #define CLASSROOM_HPP
 
-#include "../Student/student.hpp"
+#include <iostream>
 #include <string>
 #include <vector>
+
+using namespace std;
 
 class Classroom{
     bool available; // * should be an array of 5 (weekdays) positions

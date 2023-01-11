@@ -1,7 +1,7 @@
 #include "student.hpp"
 
 Student::Student() : Person(){
-    course = "";
+    // course = "";
     matriculation = "";
 } 
 
@@ -9,18 +9,18 @@ Student::Student(
     string name,
     string telephone, 
     string cpf, 
-    string course, 
+    Course course, 
     string matriculation
 ) : Person (name, telephone, cpf){
     setCourse(course);
     setMatriculation(matriculation);
 }
 
-string Student::getCourse(){
+Course Student::getCourse(){
     return this->course;
 }
 
-void Student::setCourse(string course){
+void Student::setCourse(Course course){
     this->course = course;
 }
 
@@ -34,7 +34,8 @@ void Student::setMatriculation(string mat){
 
 // new student
 Student Student::creates(){
-    string name, telephone, cpf, course, matriculation;
+    string name, telephone, cpf, matriculation;
+    Course course;
 
     cout << "Informe o nome do novo aluno:" <<endl;
     cin >> name;
@@ -45,8 +46,7 @@ Student Student::creates(){
     cout << "Informe o cpf do novo aluno:" <<endl;
     cin >> cpf;
 
-    cout << "Informe o curso do novo aluno:" <<endl;
-    cin >> course;
+    course = course.creates();
 
     cout << "Informe a matricula do novo aluno:" <<endl;
     cin >> matriculation;
@@ -75,6 +75,7 @@ void Student::show(vector<Student> students){
 Student Student::updates(Student student){
     int op;
     string updt;
+    Course course;
     cout << "O que deseja atualizar?" <<endl;
     cout << "1. Nome" <<endl;
     cout << "2. Telefone" <<endl;
@@ -100,9 +101,8 @@ Student Student::updates(Student student){
             student.setCpf(updt);
             break;
         case 4:
-            cout << "Informe o novo curso: " <<endl;
-            cin >> updt;
-            student.setCourse(updt);
+            // course = course.update();
+            // student.setCourse(course);
             break;
         case 5:
             cout << "Informe a nova matricula: " <<endl;

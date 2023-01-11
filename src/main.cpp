@@ -8,6 +8,10 @@ int main(){
         menu.showMenu();
     }
 
+    // TODO: control all the weekdays in 'Classroom'
+    // * available should be an array of 5 positions,
+    // * that represents the weekdays 
+
     // TODO: try to use 'Course' class in main.cpp
     // * remember to write the operator overloading before that
 
