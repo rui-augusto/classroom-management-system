@@ -69,6 +69,17 @@ void Course::show(vector<Course> courses){
 
 }
 
+Course Course::updates(Course course){ // * only updates the code
+    int newCode;
+
+    cout << "Informe o novo codigo do curso: ";
+    cin >> newCode;
+
+    course.setCode(newCode);
+
+    return course;
+}
+
 ostream& operator<<(ostream& out, Course& course){
     out << "Codigo: " << course.getCode() <<endl;
     out << "Dados da sala do primeiro dia de aula: " <<endl;

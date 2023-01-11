@@ -101,8 +101,9 @@ Student Student::updates(Student student){
             student.setCpf(updt);
             break;
         case 4:
-            // course = course.update();
-            // student.setCourse(course);
+            course = student.getCourse(); // * current course info
+            course = course.updates(course);
+            student.setCourse(course);
             break;
         case 5:
             cout << "Informe a nova matricula: " <<endl;
