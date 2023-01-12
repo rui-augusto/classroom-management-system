@@ -2,7 +2,7 @@
 #define TEACHERMENU_HPP
 
 #include "menu.hpp"
-#include "../../model/Teacher/teacher.hpp";
+#include "../../model/Teacher/teacher.hpp"
 
 class TeacherMenu : public Menu{
     Teacher teacher;

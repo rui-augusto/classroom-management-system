@@ -1,6 +1,8 @@
 #include "main.hpp"
 #include <vector>
 
+#include "model/Teacher/teacher.hpp"
+
 int main(){
 
     while(true){

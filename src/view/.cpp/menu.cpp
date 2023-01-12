@@ -1,7 +1,7 @@
 #include "../.hpp/menu.hpp"
 #include "../.hpp/studentMenu.hpp"
 #include "../.hpp/courseMenu.hpp"
-
+#include "../.hpp/teacherMenu.hpp"
 
 Menu::Menu() {
     setOption(0);
@@ -26,20 +26,22 @@ void Menu::showMenu(){
 }
 
 void Menu::getAnswer(){
-    int op;
-    cin >> op;
-
-    setOption(op);
-
     StudentMenu studentMenu;
     CourseMenu courseMenu;
+    TeacherMenu teacherMenu;
     
+    int op;
+    cin >> op;
+    setOption(op);
+
     switch (this->option){
         case 1: // * students menu
             studentMenu.showMenu();
             studentMenu.getAnswer();
             break;
         case 2: // * teachers menu
+            teacherMenu.showMenu();
+            teacherMenu.getAnswer();
             break;
         case 3: // * courses menu
             courseMenu.showMenu();
