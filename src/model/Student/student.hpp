@@ -1,7 +1,7 @@
 #ifndef STUDENT_HPP
 #define STUDENT_HPP
 
-#include "../person.hpp"
+#include "../Person/person.hpp"
 #include "../Course/course.hpp"
 
 class Student : public Person{

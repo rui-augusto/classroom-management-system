@@ -1,7 +1,7 @@
 #ifndef MANAGAR_HPP
 #define MANAGAR_HPP
 
-#include "../person.hpp"
+#include "../Person/person.hpp"
 
 class Manager : Person{
     string username;
@@ -20,7 +20,7 @@ public:
     
     // * Manager functions
 
-    bool login(string, string);
+    bool login(vector<Manager>, string, string);
 };
 
 #endif /* MANAGER_HPP */
