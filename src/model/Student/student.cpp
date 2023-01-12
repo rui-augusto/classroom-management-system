@@ -121,19 +121,21 @@ void Student::deletes(vector<Student>& students, int index){
 }
 
 int Student::findIndex(vector<Student> student){
-    int i; // * index counter
+    int index; // * index counter
     string matriculation;
 
     while(true){ // * only stops when the student is founded
-        i = 0;
+        index = 0;
+
         cout << "Informe a matricula do aluno em questao: ";
         cin >> matriculation;
         
-        for(auto it = begin(student); it != end(student); it++, i++){
+        for(auto it = begin(student); it != end(student); it++, index++){
             if((*it).getMatriculation() == matriculation){
-                return i;
+                return index;
             }
         }
+        cout << "Matricula nao corresponde ao cadastro de nenhum aluno" <<endl;
     }
 
 }
