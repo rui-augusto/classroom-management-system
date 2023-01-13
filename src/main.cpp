@@ -1,13 +1,34 @@
 #include "main.hpp"
-#include <vector>
-
-#include "model/Teacher/teacher.hpp"
 
 int main(){
 
-    while(true){
-        Menu menu;
-        menu.showMenu();
+    vector<Manager> managers;
+
+    Manager manager(
+        "Rui Augusto",
+        "(31) 97172-2336",
+        "126.426.716-90",
+        "ruis@admin",
+        "123456"
+    );
+
+    managers.push_back(manager);
+
+    string username, password;
+
+    cout << "Informe seu usuario de Gestor: ";
+    cin >> username;
+
+    cout << "Informe sua senha de Gestor: ";
+    cin >> password;
+
+    bool authorized = manager.login(managers, username, password);
+
+    if (authorized){
+        while(true){
+            Menu menu;
+            menu.showMenu();
+        }
     }
 
     // TODO: control all the weekdays in 'Classroom'
@@ -21,8 +42,6 @@ int main(){
     // TODO:
     // ? show all students or show only one by index?
     // * ask what the manager wants to do in 'show' function
-
-    // TODO: create 'manager' class
 
     // TODO: exit option for main menu
 
