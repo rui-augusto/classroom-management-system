@@ -114,10 +114,11 @@ Student Student::updates(Student student){
 }
 
 // * deletes function
-void Student::deletes(vector<Student>& students, int index){
+vector<Student> Student::deletes(vector<Student>& students, int index){
     auto it = students.begin();
     advance(it, index);
     students.erase(it);
+    return students;
 }
 
 int Student::findIndex(vector<Student> student){

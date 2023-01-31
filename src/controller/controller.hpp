@@ -1,5 +1,5 @@
-#ifndef SYSTEM_HPP
-#define SYSTEM_HPP
+#ifndef CONTROLLER_HPP
+#define CONTROLLER_HPP
 
 // * remember to remove the common lib include
 #include "../include/common.hpp" // TODO: add all common libs
@@ -10,7 +10,7 @@
 #include "../model/Student/student.hpp"
 #include "../model/Teacher/teacher.hpp"
 
-class System{
+class Controller{
     vector<Classroom> classrooms;
     vector<Course> courses;
     vector<Manager> managers;
@@ -18,7 +18,7 @@ class System{
     vector<Teacher> teachers;
 public:
     // * constructors
-    System();
+    Controller();
     
     // * getters and setters
     vector<Classroom> getClassrooms();
@@ -35,9 +35,6 @@ public:
 
     vector<Teacher> getTeachers();
     void setTeachers(vector<Teacher>);
-
-
-    // * System functions
 };
 
 #endif /* SYSTEM_HPP */

@@ -6,9 +6,13 @@
 #include <iostream>
 #include <vector>
 
+#include "../../controller/controller.hpp"
+
 using namespace std;
 
 class Menu{
+protected:
+    Controller controller;
     int option;
 public:
     // constructor

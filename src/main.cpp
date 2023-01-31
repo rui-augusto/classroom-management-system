@@ -2,34 +2,27 @@
 
 int main(){
 
-    vector<Manager> managers;
+    Menu menu;
+    menu.showMenu();
 
-    Manager manager(
-        "Rui Augusto",
-        "(31) 97172-2336",
-        "126.426.716-90",
-        "ruis@admin",
-        "123456"
-    );
 
-    managers.push_back(manager);
+    // * testando outras opcoes
+    // string username, password;
 
-    string username, password;
+    // cout << "Informe seu usuario de Gestor: ";
+    // cin >> username;
 
-    cout << "Informe seu usuario de Gestor: ";
-    cin >> username;
+    // cout << "Informe sua senha de Gestor: ";
+    // cin >> password;
 
-    cout << "Informe sua senha de Gestor: ";
-    cin >> password;
+    // bool authorized = manager.login(managers, username, password);
 
-    bool authorized = manager.login(managers, username, password);
-
-    if (authorized){
-        while(true){
-            Menu menu;
-            menu.showMenu();
-        }
-    }
+    // if (authorized){
+    //     while(true){
+    //         Menu menu;
+    //         menu.showMenu();
+    //     }
+    // }
 
     // TODO: control all the weekdays in 'Classroom'
     // * available should be an array of 5 positions,
@@ -46,10 +39,6 @@ int main(){
     // TODO: exit option for main menu
 
     // TODO: create new class to alocate all vectors and info
-
-    // TODO: reorganizar e reestruturar como vai funcionar
-    // ( chama-se menu, depois entra em um sub menu e assim volta para o menu)
-    // ( até que a opção informada seja sair do menu e, assim, encerrar o programa)
 
     return 0;
 }

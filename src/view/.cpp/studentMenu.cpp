@@ -13,7 +13,7 @@ void StudentMenu::getAnswer(){
     int op = -1, index;
     // setOption(op);
     // * student info
-    vector<Student> students;
+    vector<Student> students = controller.getStudents();
     Student student;
     while (op != 5){
         cin >> op;
@@ -21,19 +21,21 @@ void StudentMenu::getAnswer(){
             case 1: // * register new student
                 student = student.creates();
                 students.push_back(student);
+                controller.setStudents(students);
                 break;
             case 2: // * searches for a student
-                student.show(students);
+                student.show(controller.getStudents());
                 break;
             case 3: // * deletes a student
                 index = student.findIndex(students);
-                student.deletes(students, index);
+                controller.setStudents(student.deletes(students, index));
                 // student = student.deletes(&student);
                 // cout << student;
                 break;
             case 4: // * updates a student
                 index = student.findIndex(students);
                 students[index] = student.updates(students[index]);
+                controller.setStudents(students);
                 // student = student.updates(student);
                 break;
             case 5:
