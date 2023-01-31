@@ -2,6 +2,7 @@
 #include "../.hpp/studentMenu.hpp"
 #include "../.hpp/courseMenu.hpp"
 #include "../.hpp/teacherMenu.hpp"
+#include "../.hpp/classroomMenu.hpp"
 
 Menu::Menu() {
     setOption(0);
@@ -29,7 +30,8 @@ void Menu::getAnswer(){
     StudentMenu studentMenu;
     CourseMenu courseMenu;
     TeacherMenu teacherMenu;
-    
+    ClassroomMenu classroomMenu;
+
     int op;
     cin >> op;
     setOption(op);
@@ -48,6 +50,8 @@ void Menu::getAnswer(){
             courseMenu.getAnswer();
             break;
         case 4: // * classrooms menu
+            classroomMenu.showMenu();
+            classroomMenu.getAnswer();
             break;
         case 5: // * generate report
             break;   
