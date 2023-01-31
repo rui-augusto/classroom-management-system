@@ -26,7 +26,7 @@ public:
     Teacher updates(Teacher);
 
     // * deletes a teacher
-    void deletes(vector<Teacher>&, int);
+    vector<Teacher> deletes(vector<Teacher>&, int);
 
     // * find teacher by Course (returns index)
     int findIndex(vector<Teacher>);

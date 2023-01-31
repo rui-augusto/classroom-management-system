@@ -89,10 +89,11 @@ Teacher Teacher::updates(Teacher teacher){
     return teacher;
 }
 
-void Teacher::deletes(vector<Teacher>& teachers, int index){
+vector<Teacher> Teacher::deletes(vector<Teacher>& teachers, int index){
     auto it = begin(teachers);
     advance(it, index);
     teachers.erase(it);
+    return teachers;
 }
 
 int Teacher::findIndex(vector<Teacher> teachers){

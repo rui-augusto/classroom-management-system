@@ -80,10 +80,11 @@ Course Course::updates(Course course){ // * only updates the code
     return course;
 }
 
-void Course::deletes(vector<Course>& courses, int index){
+vector<Course> Course::deletes(vector<Course>& courses, int index){
     auto it = courses.begin();
     advance(it, index);
     courses.erase(it);
+    return courses;
 }
 
 int Course::findIndex(vector<Course> courses){

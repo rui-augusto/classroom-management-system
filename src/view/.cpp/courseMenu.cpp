@@ -12,7 +12,7 @@ void CourseMenu::showMenu(){
 void CourseMenu::getAnswer(){
     int op = -1;
     int index;
-    vector<Course> courses;
+    vector<Course> courses = controller.getCourses();
     Course course;
 
     while (op != 5){
@@ -21,17 +21,19 @@ void CourseMenu::getAnswer(){
             case 1: // * register new course
                 course = course.creates();
                 courses.push_back(course);
+                controller.setCourses(courses);
                 break;
             case 2: // * searches for a course
-                course.show(courses);
+                course.show(controller.getCourses());
                 break;
             case 3: // * deletes a course
                 index = course.findIndex(courses);
-                course.deletes(courses, index);
+                controller.setCourses(course.deletes(courses, index));
                 break;
             case 4: // * updates a course
                 index = course.findIndex(courses);
                 courses[index] = course.updates(courses[index]);
+                controller.setCourses(courses);
                 break;
             case 5:
                 return;

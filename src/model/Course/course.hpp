@@ -40,7 +40,7 @@ public:
     Course updates(Course);
 
     // * deletes a course
-    void deletes(vector<Course>&, int);
+    vector<Course> deletes(vector<Course>&, int);
 
     // * returns the index of the Course in the vector
     int findIndex(vector<Course>);
