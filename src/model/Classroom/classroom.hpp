@@ -29,6 +29,17 @@ public:
     // * creates a classroom
     Classroom creates();
 
+    // * shows classrooms
+    void show(vector<Classroom>);
+
+    // * updates a classroom
+    Classroom updates(Classroom);
+
+    // * deletes a classroom
+    vector<Classroom> deletes(vector<Classroom>, int);
+
+    // * finds a index of a classroom
+    int findIndex(vector<Classroom>);
 
     // * operator overloading
     friend ostream& operator<<(ostream&, Classroom&);

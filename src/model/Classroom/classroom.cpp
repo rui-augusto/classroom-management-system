@@ -42,6 +42,33 @@ Classroom Classroom::creates(){
     return Classroom(capacity);
 }
 
+void Classroom::show(vector<Classroom> classrooms){
+    int i = 1; // * Classroom "ID"
+
+    cout << "Total de salas: " << classrooms.size() <<endl;
+
+    for (auto it = begin(classrooms); it != classrooms.end(); it++, i++){
+        cout <<endl <<endl;
+        cout << "Dados da sala " << i << ":" <<endl;
+        cout << *it;
+    }
+
+    cout << "Pressione uma tecla para voltar ao menu.";
+    getchar(); getchar();
+}
+
+Classroom Classroom::updates(Classroom classroom){
+    int updt;
+    
+    cout << "Informe a nova capacidade da sala de aula: " <<endl;
+    cin >> updt;
+
+    classroom.setCapacity(updt);
+
+    return classroom;
+
+}
+
 ostream& operator<<(ostream& out, Classroom& classroom){
     // out << "Quantidade de alunos: " << classroom.getStudents().size() <<endl;
     out << "Capacidade da sala: " << classroom.getCapacity() <<endl;
