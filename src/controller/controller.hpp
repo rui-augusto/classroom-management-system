@@ -35,6 +35,14 @@ public:
 
     vector<Teacher> getTeachers();
     void setTeachers(vector<Teacher>);
+
+    // * controller functions
+    void printInScreen();
+
+    void printInFile();
+
+    // * get the print option answer
+    void print();
 };
 
 #endif /* SYSTEM_HPP */

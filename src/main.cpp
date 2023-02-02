@@ -3,7 +3,9 @@
 int main(){
 
     Menu menu;
-    menu.showMenu();
+    while (true){
+        menu.showMenu();
+    }
 
 
     // * testando outras opcoes

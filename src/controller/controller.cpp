@@ -41,3 +41,45 @@ vector<Teacher> Controller::getTeachers(){
 void Controller::setTeachers(vector<Teacher> teachers){
     this->teachers = teachers;
 }
+
+void Controller::printInScreen(){
+    system("cls||clear");
+    cout << "Imprimindo todas as informações do sistema." <<endl; 
+
+    cout << "Alunos: " <<endl;
+    for (auto it = begin(students); it != students.end(); it++){
+        cout << *it;
+    }
+    cout <<endl <<endl;
+
+    cout << "Professores: " <<endl;
+    for (auto it = begin(teachers); it != teachers.end(); it++){
+        cout << *it;
+    }
+    cout <<endl <<endl;
+}
+
+void Controller::printInFile(){
+
+}
+
+void Controller::showOptions(){
+    bool looping = false; // * controls the loop until receives a valid option
+    int option = -1;
+
+    while (!looping){
+        cout << "Informe qual o formato do relatorio que vai ser gerado: " <<endl;
+        cout << "0 - Em tela" <<endl;
+        cout << "1 - Em arquivo txt" <<endl;
+        cin >> option;
+        looping = option != 0 && option != 1;
+        if (!looping){
+            cout << "Informe uma opcao valida.";
+        }
+    }    
+    if (option){
+        return this->printInScreen();
+    }
+    return this->printInFile();
+
+}

@@ -23,6 +23,7 @@ void Menu::showMenu(){
     cout << " 3. Gerenciar Curso" <<endl;
     cout << " 4. Cadastrar Sala" <<endl;
     cout << " 5. Gerar Relatorio" <<endl; // TODO: search for some extension to print ´
+    cout << " 6. SAIR" <<endl;
     getAnswer();
 }
 
@@ -35,25 +36,31 @@ void Menu::getAnswer(){
     int op;
     cin >> op;
     setOption(op);
-
-    switch (this->option){
-        case 1: // * students menu
-            studentMenu.showMenu();
-            studentMenu.getAnswer();
-            break;
-        case 2: // * teachers menu
-            teacherMenu.showMenu();
-            teacherMenu.getAnswer();
-            break;
-        case 3: // * courses menu
-            courseMenu.showMenu();
-            courseMenu.getAnswer();
-            break;
-        case 4: // * classrooms menu
-            classroomMenu.showMenu();
-            classroomMenu.getAnswer();
-            break;
-        case 5: // * generate report
-            break;   
+    while(op != 6){
+        switch (this->option){
+            case 1: // * students menu
+                studentMenu.showMenu();
+                studentMenu.getAnswer();
+                break;
+            case 2: // * teachers menu
+                teacherMenu.showMenu();
+                teacherMenu.getAnswer();
+                break;
+            case 3: // * courses menu
+                courseMenu.showMenu();
+                courseMenu.getAnswer();
+                break;
+            case 4: // * classrooms menu
+                classroomMenu.showMenu();
+                classroomMenu.getAnswer();
+                break;
+            case 5: // * generate report
+                break;
+            case 6:
+                cout << "Encerrando o sistema..." <<endl;
+                break;
+            default:
+                cout << "Informe uma opcao valida." <<endl;
+        }
     }
 }
