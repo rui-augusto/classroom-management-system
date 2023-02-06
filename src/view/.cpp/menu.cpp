@@ -60,9 +60,12 @@ void Menu::getAnswer(){
                 break;
             case 6:
                 cout << "Encerrando o sistema..." <<endl;
+                exit(1);
                 break;
             default:
                 cout << "Informe uma opcao valida." <<endl;
+                cout << "Pressione uma tecla para continuar.";
+                getchar(); getchar();
         }
         if (this->option != 5){
             showMenu();
