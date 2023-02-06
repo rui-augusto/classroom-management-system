@@ -39,10 +39,12 @@ void StudentMenu::getAnswer(){
                 // student = student.updates(student);
                 break;
             case 5:
-                return;
+                break;
             default: 
                 cout << "informe uma opcao valida." <<endl;   
         }
-        showMenu();
+        if (op != 5){
+            showMenu();
+        }
     }
 }

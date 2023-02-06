@@ -33,10 +33,12 @@ void Menu::getAnswer(){
     TeacherMenu teacherMenu;
     ClassroomMenu classroomMenu;
 
+    Controller controller;
+
     int op;
-    cin >> op;
-    setOption(op);
     while(op != 6){
+        cin >> op;
+        setOption(op);
         switch (this->option){
             case 1: // * students menu
                 studentMenu.showMenu();
@@ -61,6 +63,9 @@ void Menu::getAnswer(){
                 break;
             default:
                 cout << "Informe uma opcao valida." <<endl;
+        }
+        if (this->option != 5){
+            showMenu();
         }
     }
 }

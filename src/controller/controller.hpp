@@ -42,7 +42,7 @@ public:
     void printInFile();
 
     // * get the print option answer
-    void print();
+    void showOptions();
 };
 
 #endif /* SYSTEM_HPP */
