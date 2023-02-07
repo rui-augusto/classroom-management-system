@@ -9,10 +9,10 @@ void CourseMenu::showMenu(){
     cout << " 5. Voltar ao MENU INICIAL" <<endl;
 }
 
-void CourseMenu::getAnswer(){
+void CourseMenu::getAnswer(Controller* controller){
     int op = -1;
     int index;
-    vector<Course> courses = controller.getCourses();
+    vector<Course> courses = controller->getCourses();
     Course course;
 
     while (op != 5){
@@ -21,19 +21,19 @@ void CourseMenu::getAnswer(){
             case 1: // * register new course
                 course = course.creates();
                 courses.push_back(course);
-                controller.setCourses(courses);
+                controller->setCourses(courses);
                 break;
             case 2: // * searches for a course
-                course.show(controller.getCourses());
+                course.show(controller->getCourses());
                 break;
             case 3: // * deletes a course
                 index = course.findIndex(courses);
-                controller.setCourses(course.deletes(courses, index));
+                controller->setCourses(course.deletes(courses, index));
                 break;
             case 4: // * updates a course
                 index = course.findIndex(courses);
                 courses[index] = course.updates(courses[index]);
-                controller.setCourses(courses);
+                controller->setCourses(courses);
                 break;
             case 5:
                 return;

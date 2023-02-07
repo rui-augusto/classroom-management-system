@@ -33,8 +33,6 @@ void Menu::getAnswer(){
     TeacherMenu teacherMenu;
     ClassroomMenu classroomMenu;
 
-    Controller controller;
-
     int op;
     while(op != 6){
         cin >> op;
@@ -42,19 +40,19 @@ void Menu::getAnswer(){
         switch (this->option){
             case 1: // * students menu
                 studentMenu.showMenu();
-                studentMenu.getAnswer();
+                studentMenu.getAnswer(&controller);
                 break;
             case 2: // * teachers menu
                 teacherMenu.showMenu();
-                teacherMenu.getAnswer();
+                teacherMenu.getAnswer(&controller);
                 break;
             case 3: // * courses menu
                 courseMenu.showMenu();
-                courseMenu.getAnswer();
+                courseMenu.getAnswer(&controller);
                 break;
             case 4: // * classrooms menu
                 classroomMenu.showMenu();
-                classroomMenu.getAnswer();
+                classroomMenu.getAnswer(&controller);
                 break;
             case 5: // * generate report
                 break;

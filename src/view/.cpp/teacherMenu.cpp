@@ -9,11 +9,11 @@ void TeacherMenu::showMenu(){
     cout << " 5. Voltar ao MENU INICIAL" <<endl;
 }
 
-void TeacherMenu::getAnswer(){
+void TeacherMenu::getAnswer(Controller* controller){
     int op = -1, index;
     // setOption(op);
     // * student info
-    vector<Teacher> teachers = controller.getTeachers();
+    vector<Teacher> teachers = controller->getTeachers();
     Teacher teacher;
     while (op != 5){
         cin >> op;
@@ -21,19 +21,19 @@ void TeacherMenu::getAnswer(){
             case 1: // * register new teacher
                 teacher = teacher.creates();
                 teachers.push_back(teacher);
-                controller.setTeachers(teachers);
+                controller->setTeachers(teachers);
                 break;
             case 2: // * searches for a teacher
-                teacher.show(controller.getTeachers());
+                teacher.show(controller->getTeachers());
                 break;
             case 3: // * deletes a teacher
                 index = teacher.findIndex(teachers);
-                controller.setTeachers(teacher.deletes(teachers, index));
+                controller->setTeachers(teacher.deletes(teachers, index));
                 break;
             case 4: // * updates a teacher
                 index = teacher.findIndex(teachers);
                 teachers[index] = teacher.updates(teachers[index]);
-                controller.setTeachers(teachers);
+                controller->setTeachers(teachers);
                 break;
             case 5:
                 return;

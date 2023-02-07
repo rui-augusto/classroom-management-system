@@ -42,44 +42,60 @@ void Controller::setTeachers(vector<Teacher> teachers){
     this->teachers = teachers;
 }
 
-void Controller::printInScreen(){
-    system("cls||clear");
-    cout << "Imprimindo todas as informações do sistema." <<endl; 
-
-    cout << "Alunos: " <<endl;
-    for (auto it = begin(students); it != students.end(); it++){
-        cout << *it;
-    }
-    cout <<endl <<endl;
-
-    cout << "Professores: " <<endl;
-    for (auto it = begin(teachers); it != teachers.end(); it++){
-        cout << *it;
-    }
-    cout <<endl <<endl;
-}
-
-void Controller::printInFile(){
-
-}
-
 void Controller::showOptions(){
-    bool looping = false; // * controls the loop until receives a valid option
-    int option = -1;
+    bool printOptionLooping = false; // * controls the print mode loop until receives a valid option
+    int printOption = -1;
+    bool dateOptionLooping = false;
+    int dateOption = -1;
 
-    while (!looping){
+    while (!printOptionLooping){
         cout << "Informe qual o formato do relatorio que vai ser gerado: " <<endl;
         cout << "0 - Em tela" <<endl;
         cout << "1 - Em arquivo txt" <<endl;
-        cin >> option;
-        looping = option != 0 && option != 1;
-        if (!looping){
+        cin >> printOption;
+        printOptionLooping = printOption == 0 || printOption == 1; // * verify if 'printOption' is valid
+        if (!printOptionLooping){
             cout << "Informe uma opcao valida.";
         }
-    }    
-    if (option){
-        return this->printInScreen();
     }
-    return this->printInFile();
 
+    while (!dateOptionLooping){
+        cout << "Informe quais dados devem ser imprimidos: " <<endl;
+        cout << "1. Aluno" <<endl;
+        cout << "2. Professor" <<endl;
+        cout << "3. Curso" <<endl;
+        cout << "4. Sala" << endl;
+        cout << "5. Voltar ao MENU INICIAL" << endl;
+        cin >> dateOption;
+        if (dateOption > 0 && dateOption < 6) dateOptionLooping = true; 
+    }
+
+    if (printOptionLooping && dateOptionLooping){ // * if input is valid
+        return this->printInScreen(dateOption);
+    }
+    return this->printInFile(dateOption);
+
+}
+
+void Controller::printInScreen(int date){
+    system("cls||clear");
+    switch(date){
+        case 1:
+            cout << "Alunos: " <<endl;
+            for (auto it = begin(students); it != students.end(); it++){
+                cout << *it;
+            }
+            break;
+        case 2:
+            cout << "Professores: " <<endl;
+            for (auto it = begin(teachers); it != teachers.end(); it++){
+                cout << *it;
+            }
+            break;
+    }
+    cout <<endl <<endl;
+}
+
+void Controller::printInFile(int date){
+    
 }

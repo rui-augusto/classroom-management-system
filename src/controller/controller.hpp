@@ -37,9 +37,9 @@ public:
     void setTeachers(vector<Teacher>);
 
     // * controller functions
-    void printInScreen();
+    void printInScreen(int);
 
-    void printInFile();
+    void printInFile(int);
 
     // * get the print option answer
     void showOptions();
