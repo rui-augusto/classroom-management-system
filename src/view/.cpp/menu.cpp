@@ -55,6 +55,7 @@ void Menu::getAnswer(){
                 classroomMenu.getAnswer(&controller);
                 break;
             case 5: // * generate report
+                controller.showOptions();
                 break;
             case 6:
                 cout << "Encerrando o sistema..." <<endl;
@@ -65,8 +66,6 @@ void Menu::getAnswer(){
                 cout << "Pressione uma tecla para continuar.";
                 getchar(); getchar();
         }
-        if (this->option != 5){
-            showMenu();
-        }
+        showMenu();
     }
 }
