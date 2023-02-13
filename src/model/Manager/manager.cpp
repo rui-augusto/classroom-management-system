@@ -32,12 +32,23 @@ void Manager::setPassword(string password){
     this->password = password;
 }
 
-bool Manager::login(vector<Manager> managers, string username, string password){
-    for(auto it = begin(managers); it != end(managers); it++){
-        if((*it).getUsername() == username && (*it).getPassword() == password){
-            return true; // * manager account exists
-        }
-    }
+bool Manager::getIsValid(){
+    return this->isValid;
+}
 
-    return false;
+void Manager::setIsValid(bool isValid){
+    this->isValid = isValid;
+}
+
+
+void Manager::login(string username, string password){
+    ifstream file("database/managers.txt");
+    string name, cpf, telephone;
+
+    if (!file) { perror("Error"); }
+
+    while (file >> name >> cpf >> telephone >> this->username >> this->password){
+        if (username == this->username && password == this->password) setIsValid(true);
+    }
+    setIsValid(false);
 }

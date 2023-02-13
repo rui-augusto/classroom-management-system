@@ -1,0 +1,10 @@
+Nome: Rui
+Telefone: (31)97172-2336
+CPF: 126.426.716-90
+Curso: Codigo: 221
+Dados da sala do primeiro dia de aula: 
+Capacidade da sala: 10
+Dados da sala do segundo dia de aula: 
+Capacidade da sala: 10
+
+Matricula: 19.1.4110

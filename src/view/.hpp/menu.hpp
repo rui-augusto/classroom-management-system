@@ -7,12 +7,14 @@
 #include <vector>
 
 #include "../../controller/controller.hpp"
+#include "../../model/Manager/manager.hpp"
 
 using namespace std;
 
 class Menu{
 protected:
     Controller controller;
+    Manager manager;
     int option;
 public:
     // constructor

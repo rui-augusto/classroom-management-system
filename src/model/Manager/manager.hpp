@@ -1,11 +1,13 @@
 #ifndef MANAGAR_HPP
 #define MANAGAR_HPP
 
-#include "../Person/person.hpp"
+#include "../Person/person.hpp" // * verify if the inherance is being used
+#include <fstream>
 
 class Manager : Person{
     string username;
     string password;
+    bool isValid;
 public:
     // * constructors
     Manager();
@@ -18,9 +20,12 @@ public:
     string getPassword();
     void setPassword(string);
     
+    bool getIsValid();
+    void setIsValid(bool);
+
     // * Manager functions
 
-    bool login(vector<Manager>, string, string);
+    void login(string, string);
 };
 
 #endif /* MANAGER_HPP */

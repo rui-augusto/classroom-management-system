@@ -17,12 +17,12 @@ void Menu::setOption(int op){
 }
 
 void Menu::showMenu(){
-    system("clear||cls"); // clear the screen
+    system("clear||cls"); // * clear the screen
     cout << " 1. Gerenciar Aluno" <<endl;
     cout << " 2. Gerenciar Professor" <<endl;
     cout << " 3. Gerenciar Curso" <<endl;
     cout << " 4. Cadastrar Sala" <<endl;
-    cout << " 5. Gerar Relatorio" <<endl; // TODO: search for some extension to print ´
+    cout << " 5. Gerar Relatorio" <<endl; 
     cout << " 6. SAIR" <<endl;
     getAnswer();
 }

@@ -6,7 +6,6 @@
 
 #include "../model/Classroom/classroom.hpp"
 #include "../model/Course/course.hpp"
-#include "../model/Manager/manager.hpp"
 #include "../model/Student/student.hpp"
 #include "../model/Teacher/teacher.hpp"
 
@@ -21,10 +20,11 @@ void printVectorInScreen(vector <AnyVector> anyVector, string date){
     getchar(); getchar();
 }
 
+// ! CANNOT DEFINE ANOTHER TEMPLATE FOR USING IN 'printInFile' FUNCTION
+
 class Controller{
     vector<Classroom> classrooms;
     vector<Course> courses;
-    vector<Manager> managers;
     vector<Student> students;
     vector<Teacher> teachers;
 public:
@@ -37,9 +37,6 @@ public:
     
     vector<Course> getCourses();
     void setCourses(vector<Course>);
-
-    vector<Manager> getManagers();
-    void setManagers(vector<Manager>);
 
     vector<Student> getStudents();
     void setStudents(vector<Student>);
@@ -71,7 +68,35 @@ public:
         cout <<endl <<endl;
     }
 
-    void printInFile(int);
+    void printInFile(int date){
+        ofstream file;
+
+        switch(date){
+            case 1:
+                cout << "Dados de ALUNOS foram impressos em 'students.txt'." <<endl <<endl;
+                file.open("database/students.txt");
+                if (!file) { perror("Error"); }
+                for (auto it = begin(this->students); it != end(this->students); it++){
+                    file << *it;
+                }
+                break;
+            case 2:
+                cout << "Dados de PROFESSORES foram impressos em 'teachers.txt'." <<endl <<endl;
+                file.open("database/teachers.txt");
+                if (!file) { perror("Error"); }
+                break;
+            case 3:
+                cout << "Dados de CURSOS foram impressos em 'courses.txt'." <<endl <<endl;
+                file.open("database/courses.txt");
+                if (!file) { perror("Error"); }
+                break;
+            case 4:
+                cout << "Dados de SALAS foram impressos em 'classrooms'.txt" <<endl <<endl;
+                file.open("database/classrooms.txt");
+                if (!file) { perror("Error"); }
+                break;
+        }
+    }
 
     // * get the print option answer
     void showOptions(){
@@ -102,11 +127,10 @@ public:
             if (dateOption > 0 && dateOption < 6) dateOptionLooping = true; 
         }
 
-        if (printOptionLooping && dateOptionLooping){ // * if input is valid
+        if (!printOption){
             return this->printInScreen(dateOption);
         }
-        // return this->printInFile(dateOption);
-
+        return this->printInFile(dateOption);
     }
 };
 
