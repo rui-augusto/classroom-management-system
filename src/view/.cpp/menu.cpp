@@ -40,7 +40,7 @@ void Menu::getAnswer(){
         switch (this->option){
             case 1: // * students menu
                 studentMenu.showMenu();
-                studentMenu.getAnswer(&controller);
+                studentMenu.getAnswer(&controller, manager);
                 break;
             case 2: // * teachers menu
                 teacherMenu.showMenu();

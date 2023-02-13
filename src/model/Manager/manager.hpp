@@ -7,7 +7,7 @@
 class Manager : Person{
     string username;
     string password;
-    bool isValid;
+    // bool isValid;
 public:
     // * constructors
     Manager();
@@ -20,12 +20,12 @@ public:
     string getPassword();
     void setPassword(string);
     
-    bool getIsValid();
-    void setIsValid(bool);
+    // bool getIsValid();
+    // void setIsValid(bool);
 
     // * Manager functions
 
-    void login(string, string);
+    bool login();
 };
 
 #endif /* MANAGER_HPP */

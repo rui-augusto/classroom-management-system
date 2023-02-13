@@ -32,23 +32,28 @@ void Manager::setPassword(string password){
     this->password = password;
 }
 
-bool Manager::getIsValid(){
-    return this->isValid;
-}
+// bool Manager::getIsValid(){
+//     return this->isValid;
+// }
 
-void Manager::setIsValid(bool isValid){
-    this->isValid = isValid;
-}
+// void Manager::setIsValid(bool isValid){
+//     this->isValid = isValid;
+// }
 
 
-void Manager::login(string username, string password){
+bool Manager::login(){
     ifstream file("database/managers.txt");
     string name, cpf, telephone;
+    string username, password;
+
+    cout << "Informe o usuario e senha de administrador." << endl;
+    cout << "Usuario: "; cin >> username;
+    cout << "Senha: "; cin >> password;
 
     if (!file) { perror("Error"); }
 
     while (file >> name >> cpf >> telephone >> this->username >> this->password){
-        if (username == this->username && password == this->password) setIsValid(true);
+        if (username == this->username && password == this->password) return true;
     }
-    setIsValid(false);
+    return false;
 }

@@ -9,34 +9,46 @@ void StudentMenu::showMenu(){
     cout << " 5. Voltar ao MENU INICIAL" <<endl;
 }
 
-void StudentMenu::getAnswer(Controller* controller){
+void StudentMenu::getAnswer(Controller* controller, Manager manager){
     int op = -1, index;
-    // setOption(op);
-    // * student info
+
     vector<Student> students = controller->getStudents();
     Student student;
+
     while (op != 5){
         cin >> op;
         switch (op){
             case 1: // * register new student
-                student = student.creates();
-                students.push_back(student);
-                controller->setStudents(students);
+                if (manager.login()){
+                    student = student.creates();
+                    students.push_back(student);
+                    controller->setStudents(students);
+                } else { 
+                    cout << "Voce deve informar credenciais validas para ter acesso a esta opcao." << endl;
+                    getchar(); getchar();     
+                }
                 break;
             case 2: // * searches for a student
                 student.show(controller->getStudents());
                 break;
             case 3: // * deletes a student
-                index = student.findIndex(students);
-                controller->setStudents(student.deletes(students, index));
-                // student '= student.deletes(&student);
-                // cout << student;
+                if (manager.login()){
+                    index = student.findIndex(students);
+                    controller->setStudents(student.deletes(students, index));
+                } else {
+                    cout << "Voce deve informar credenciais validas para ter acesso a esta opcao." << endl;
+                    getchar(); getchar();  
+                }
                 break;
             case 4: // * updates a student
-                index = student.findIndex(students);
-                students[index] = student.updates(students[index]);
-                controller->setStudents(students);
-                // student = student.updates(student);
+                if (manager.login()){
+                    index = student.findIndex(students);
+                    students[index] = student.updates(students[index]);
+                    controller->setStudents(students);
+                } else {
+                    cout << "Voce deve informar credenciais validas para ter acesso a esta opcao." << endl;
+                    getchar(); getchar(); 
+                }
                 break;
             case 5:
                 break;

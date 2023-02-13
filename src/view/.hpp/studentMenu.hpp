@@ -9,7 +9,7 @@ class StudentMenu : public Menu{
 public:
 
     void showMenu();
-    void getAnswer(Controller*);
+    void getAnswer(Controller*, Manager);
 
 };
 

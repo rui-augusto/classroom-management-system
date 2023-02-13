@@ -1,2 +1,1 @@
-g++ -Wall -o main main.cpp view/.cpp/*.cpp  model/*/*.cpp
 g++ -Wall -o main main.cpp controller/*.cpp view/.cpp/*.cpp  model/*/*.cpp
