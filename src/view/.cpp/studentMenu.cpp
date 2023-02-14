@@ -29,7 +29,8 @@ void StudentMenu::getAnswer(Controller* controller, Manager manager){
                 }
                 break;
             case 2: // * searches for a student
-                student.show(controller->getStudents());
+                index = student.findIndex(students);
+                student.show(controller->getStudents(), index);
                 break;
             case 3: // * deletes a student
                 if (manager.login()){

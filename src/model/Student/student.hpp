@@ -24,7 +24,7 @@ public:
     Student creates();
 
     // * searches a student 
-    void show(vector<Student>);
+    void show(vector<Student>, int);
 
     // * updates a student
     Student updates(Student);

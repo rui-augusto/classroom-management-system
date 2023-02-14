@@ -55,16 +55,13 @@ Student Student::creates(){
 }
 
 // TODO: new option to show only one student
-void Student::show(vector<Student> students){
-    int i = 1; // * Student "ID"
+void Student::show(vector<Student> students, int index){
+    int i = 0; // * Student "ID"
 
-    cout << "Total de alunos: " << students.size() <<endl;
-
-    // * show every student of the Students vector
     for(auto it = begin(students); it != students.end(); it++, i++){
-        cout <<endl <<endl;
-        cout << "Dados do aluno " << i << ":" <<endl;
-        cout << *it;
+        if (i == index) {
+            cout << *it;
+        }
     }
 
     cout << "Pressione uma tecla para voltar ao menu.";
